@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Know Your Area</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f4f8;
+            color: #2d3748;
+            transition: all 0.3s ease;
+        }
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #ffffff;
+            padding: 15px 25px;
+            border-bottom: 1px solid #e2e8f0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            background: linear-gradient(135deg, #4299e1, #3182ce);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 8px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 8px rgba(66,153,225,0.2);
+        }
+        .title {
+            font-size: 28px;
+            font-weight: 700;
+            color: #3182ce;
+            transition: all 0.3s;
+            letter-spacing: 0.5px;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            gap: 20px;
+        }
+        nav ul li {
+            cursor: pointer;
+            position: relative;
+            transition: all 0.3s;
+            font-weight: 500;
+            padding: 5px 0;
+            color: #4a5568;
+        }
+        .icons {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .icons input {
+            padding: 10px 15px;
+            border: 1px solid #e2e8f0;
+            border-radius: 20px;
+            width: 150px;
+            transition: all 0.3s;
+            font-size: 14px;
+            background-color: #f7fafc;
+        }
+        .icons button {
+            background-color: #f7fafc;
+            border: 1px solid #e2e8f0;
+            padding: 10px 18px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+            color: #4a5568;
+        }
+        .content {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+        section {
+            text-align: center;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(to right, #2d3748, #4a5568);
+            color: white;
+            margin-top: 40px;
+            box-shadow: 0 -5px 15px rgba(0,0,0,0.05);
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 180px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+            z-index: 1;
+            border-radius: 8px;
+            overflow: hidden;
+            transform: translateY(10px);
+            opacity: 0;
+            transition: all 0.3s;
+        }
+        .dropdown-content a {
+            float: none;
+            color: #4a5568;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+        .dropdown-content a:hover {
+            background-color: #f7fafc;
+            color: #3182ce;
+            padding-left: 20px;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+            transform: translateY(0);
+            opacity: 1;
+        }
+        .dropbtn {
+            background-color: transparent;
+            color: #4a5568;
+            padding: 5px 10px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        .dropbtn:hover {
+            color: #3182ce;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        table {
+            border-collapse: collapse;
+            margin: 20px auto;
+            width: 90%;
+            background-color: #fff;
+            border: 1px solid #000;
+        }
+        th, td {
+            border: 1px solid #000;
+            padding: 10px;
+            text-align: center;
+        }        
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">UR</div>
+        <div class="title">KNOW YOUR AREA</div>
+        <nav>
+            <ul>
+              <a href="../index.html"><li>HOME</li></a>
+              <a href="About.html"><li>ABOUT</li></a>
+              <a href="Directory.html"><li>DIRECTORY</li></a>
+              <div class="dropdown">
+                <button class="dropbtn">
+                  EXPLORE ▼
+                  <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                  <a href="Hospital.html">Hospital</a>
+                  <a href="Restaurant.html">Restaurant</a>
+                  <a href="shop.html">Shopping center</a>
+                  <a href="Education.html">Educational institution</a>
+                  <a href="other.html">others</a>
+                </div>
+              </div>
+              <a href="Nearby.html"><li>NEAR BY</li></a>
+              <a href="Helpline.html"><li>HELPLINE</li></a>
+            </ul>
+          </nav>
+        <div class="icons">
+            <input type="text" placeholder="Search...">
+            <button>ENG</button>
+           
+        </div>
+    </header>
+    <main>
+        <table>
+            <tr>
+                
+                <th>DEPARTMENT</th>
+                <th>DESIGNATION</th>
+                <th>NAME</th>
+                <th>MOBILE NO.</th>
+                <th>DESCRIPTION</th>
+                
+            </tr>
+            <tr>
+                <td>Revenue Section</td>
+                <td>Deputy Commissioner (Revenue)</td>
+                <td>B.K. Rudramuni</td>
+                <td>+919741883704</td>
+                <td>Contact them to learn about the work related to the revenue branch of the said ward.</td>
+            </tr>
+            <tr>
+                <td>Engineering Section	</td>
+                <td>Electrical Engineer</td>
+                <td>Sandeep KS</td>
+                <td>+918792581857</td>
+                <td>Implementation of electricity, street lighting, and water supply development works in the said ward.</td>
+                
+            </tr>
+            <tr>
+                <td>Engineering Section	</td>
+            
+                <td>Joint. Director Town Planning</td>
+                <td>Sangappa S Garampally</td>
+                <td >+919448414128</td>
+                <td >Contact them for information regarding the building permit for the said ward</td>
+            </tr>
+            <tr>
+                <td>Engineering Section	</td>
+                <td>Executive Engineer</td>
+                <td>Praveen Kumar A</td>
+                <td>+919343843026</td>
+                <td>Execution of civil works and solid waste disposal related works of the said ward (in charge)</td>
+               
+            </tr>
+            <tr>
+                <td>Engineering Section</td>
+                <td>Assistant Engineer</td>
+                <td>Sudhindra Naik</td>
+                <td>+919620717293</td>
+                <td>Contact them to learn about electrical work and street light maintenance in the said ward.</td>
+                
+            </tr>
+            <tr>
+                <td>Engineering Section	.</td>
+                <td>Assistant Executive Engineer</td>
+                <td>Lakshmi K</td>
+                <td>+918971881530</td>
+                <td>Contact them to inquire about the progress of the ward's work</td>
+            </tr>
+            <tr>
+                <td>Health Section</td>
+                <td>Corporation Health Officer</td>
+                <td>Dr. Yogish M C</td>
+                <td>+919448550159</td>
+                <td>Contact them to learn about the work related to the cleanliness and health department of the ward.</td>
+            </tr>
+            <tr>
+                <td>Revenue Section</td>
+                <td>Revenue officer</td>
+                <td>Shantala K</td>
+                <td>+919743340403	</td>
+                <td>Contact them to inquire about property tax registration, water tax, UGD, and other property-related issues in the said ward.</td>
+            </tr>
+            
+            
+        </table> 
+    <footer>
+        <p>WEBSITE POLICY | PRIVACY POLICY | FEEDBACK | LAST UPDATE: 2024</p>
+    </footer>
+</body>
+</html>

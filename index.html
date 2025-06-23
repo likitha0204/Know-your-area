@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Know Your Area</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f4f8;
+        color: #2d3748;
+        transition: all 0.3s ease;
+      }
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #ffffff;
+        padding: 15px 25px;
+        border-bottom: 1px solid #e2e8f0;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+      .title {
+        font-size: 28px;
+        font-weight: 700;
+        color: #3182ce;
+        transition: all 0.3s;
+        letter-spacing: 0.5px;
+      }
+      .title:hover {
+        color: #2c5282;
+        transform: scale(1.02);
+      }
+      .logo {
+        font-size: 22px;
+        font-weight: bold;
+        background: linear-gradient(135deg, #4299e1, #3182ce);
+        color: white;
+        padding: 8px 15px;
+        border-radius: 8px;
+        transition: all 0.3s;
+        box-shadow: 0 4px 8px rgba(66, 153, 225, 0.2);
+      }
+      .logo:hover {
+        transform: scale(1.05) rotate(2deg);
+        box-shadow: 0 6px 12px rgba(66, 153, 225, 0.3);
+      }
+      nav ul {
+        list-style-type: none;
+        padding: 0;
+        display: flex;
+        gap: 20px;
+      }
+      nav ul li {
+        cursor: pointer;
+        position: relative;
+        transition: all 0.3s;
+        font-weight: 500;
+        padding: 5px 0;
+        color: #4a5568;
+      }
+      nav ul li:hover {
+        color: #3182ce;
+        transform: translateY(-2px);
+      }
+      nav ul li::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -3px;
+        left: 0;
+        background-color: #3182ce;
+        transition: width 0.3s;
+      }
+      nav ul li:hover::after {
+        width: 100%;
+      }
+      .icons {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+      .icons input {
+        padding: 10px 15px;
+        border: 1px solid #e2e8f0;
+        border-radius: 20px;
+        width: 150px;
+        transition: all 0.3s;
+        font-size: 14px;
+        background-color: #f7fafc;
+      }
+      .icons input:focus {
+        width: 200px;
+        border-color: #4299e1;
+        outline: none;
+        box-shadow: 0 0 8px rgba(66, 153, 225, 0.2);
+      }
+      .icons button {
+        background-color: #f7fafc;
+        border: 1px solid #e2e8f0;
+        padding: 10px 18px;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: all 0.3s;
+        font-weight: 500;
+        color: #4a5568;
+      }
+      .icons button:hover {
+        background-color: #3182ce;
+        color: white;
+        border-color: #3182ce;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(66, 153, 225, 0.2);
+      }
+      .content {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        padding: 30px;
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .image img,
+      .map img,
+      .counciler-info img {
+        width: 100%;
+        max-width: 400px;
+        border-radius: 10px;
+        transition: all 0.4s;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      }
+      .image img:hover,
+      .map img:hover {
+        transform: scale(1.03) translateY(-5px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+      }
+      .map,
+      .counciler-info {
+        background: white;
+        padding: 25px;
+        border-radius: 12px;
+        text-align: center;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+        transition: all 0.4s;
+        overflow: hidden;
+      }
+      .map:hover,
+      .counciler-info:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+      }
+      .map h3,
+      .counciler-info h3 {
+        color: #3182ce;
+        margin-bottom: 15px;
+      }
+      .picture {
+        width: 60px;
+        height: 160px;
+        transition: all 0.4s;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      .picture:hover {
+        transform: scale(1.08);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+      }
+      section {
+        text-align: center;
+        padding: 20px 0;
+      }
+      section.info h2 {
+        color: #2d3748;
+        margin-top: 40px;
+        position: relative;
+        display: inline-block;
+        font-size: 28px;
+        transition: all 0.3s;
+      }
+      section.info h2:hover {
+        color: #3182ce;
+        transform: scale(1.05);
+      }
+      section.info h2::after {
+        content: "";
+        position: absolute;
+        width: 50%;
+        height: 3px;
+        background-color: #3182ce;
+        bottom: -10px;
+        left: 25%;
+        border-radius: 2px;
+        transition: width 0.3s, left 0.3s;
+      }
+      section.info h2:hover::after {
+        width: 80%;
+        left: 10%;
+      }
+      section.info p {
+        max-width: 800px;
+        margin: 30px auto;
+        line-height: 1.8;
+        color: #4a5568;
+        font-size: 16px;
+      }
+      footer {
+        text-align: center;
+        padding: 20px;
+        background: linear-gradient(to right, #2d3748, #4a5568);
+        color: white;
+        margin-top: 40px;
+        box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.05);
+      }
+      footer p {
+        transition: all 0.3s;
+        color: #e2e8f0;
+      }
+      footer p:hover {
+        transform: scale(1.05);
+        color: #4299e1;
+      }
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: white;
+        min-width: 180px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.1);
+        z-index: 1;
+        border-radius: 8px;
+        overflow: hidden;
+        transform: translateY(10px);
+        opacity: 0;
+        transition: all 0.3s;
+      }
+      .dropdown-content a {
+        float: none;
+        color: #4a5568;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+        transition: all 0.3s;
+        font-weight: 500;
+      }
+      .dropdown-content a:hover {
+        background-color: #f7fafc;
+        color: #3182ce;
+        padding-left: 20px;
+      }
+      .dropdown:hover .dropdown-content {
+        display: block;
+        transform: translateY(0);
+        opacity: 1;
+      }
+      .dropbtn {
+        background-color: transparent;
+        color: #4a5568;
+        padding: 5px 10px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+        font-weight: 500;
+        transition: all 0.3s;
+      }
+      .dropbtn:hover {
+        color: #3182ce;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">UR</div>
+      <div class="title">KNOW YOUR AREA</div>
+      <nav>
+        <ul>
+          <a href="index.html"><li>HOME</li></a>
+          <a href="./public/About.html"><li>ABOUT</li></a>
+          <a href="./public/Directory.html"><li>DIRECTORY</li></a>
+          <div class="dropdown">
+            <button class="dropbtn">
+              EXPLORE ▼
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="./public/Hospital.html">Hospital</a>
+              <a href="./public/Restaurant.html">Restaurant</a>
+              <a href="./public/shop.html">Shopping center</a>
+              <a href="./public/Education.html">Educational institution</a>
+              <a href="./public/other.html">others</a>
+            </div>
+          </div>
+          <a href="./public/Nearby.html"><li>NEAR BY</li></a>
+          <a href="./public/Helpline.html"><li>HELPLINE</li></a>
+        </ul>
+      </nav>
+      <div class="icons">
+        <input type="text" placeholder="Search..." />
+        <button>ENG</button>
+      </div>
+    </header>
+    <main>
+      <section class="info">
+        <h2>SHAKAR PURAM BH ROAD, TUMKUR</h2>
+        <p>
+          Area is specialized with pleasant nature, <br />
+          well facilitated water supply, facilitated with human basic need,<br />
+          with less population where it leads to a healthy community.
+        </p>
+      </section>
+      <br />
+      <br />
+      <section class="content">
+        <div class="image">
+          <img src="./assets/Areapicture.jpg" alt="Aerial view of area" />
+        </div>
+        <div class="map">
+          <a
+            href="https://r.search.yahoo.com/_ylt=Awr1WTjVP.FnJQIQ51m7HAx.;_ylu=Y29sbwNzZzMEcG9zAzEEdnRpZAMEc2VjA3Ny/RV=2/RE=1744024790/RO=10/RU=https%3a%2f%2fhousing.com%2fward-no.-18-tumkur-overview-P6ye0mjuv9bdoc9em/RK=2/RS=wp6QmSxDtNELQOYG1xK2E9dIwm0-4"
+            ><h3>MAPS</h3></a
+          >
+          <img src="./assets/Map.png" alt="Map of the area" />
+        </div>
+        <div class="counciler-info">
+          <h3>AREA COUNCILLOR:</h3>
+          <p>CONTACT DETAILS:</p>
+          <div class="profile-placeholder">
+            <img
+              src="./assets/Profile_icon.webp"
+              alt="Councillor profile"
+              class="picture"
+            />
+          </div>
+        </div>
+      </section>
+    </main>
+    <br />
+    <br />
+    <br />
+    <footer>
+      <p>WEBSITE POLICY | PRIVACY POLICY | FEEDBACK | LAST UPDATE: 2024</p>
+    </footer>
+  </body>
+</html>
